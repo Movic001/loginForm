@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funds Recovery Form</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="shortcut icon" href="./images/images.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="login-container">
+        <div class="login-form-wrapper">
+          <div class="form-header">
+            <h1>Funds Recovery Form</h1>
+            <div class="greeting" id="timeGreeting"></div>
+            <p>Please enter your details to continue</p>
+          </div>
+          <form id="loginForm" class="login-form">
+            <div class="form-group">
+              <input type="text" id="fullName" class="form-input" required />
+              <label for="fullName" class="form-label">Full Name</label>
+              <span class="error-message" id="fullNameError"></span>
+            </div>
+
+            <div class="form-group">
+              <input type="text" id="address" class="form-input" required />
+              <label for="address" class="form-label">Address</label>
+              <span class="error-message" id="addressError"></span>
+            </div>
+
+            <div class="form-group">
+              <select id="paymentMode" class="form-input" required>
+                <option value="" disabled selected hidden></option>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="crypto">Cryptocurrency</option>
+              </select>
+              <label for="paymentMode" class="form-label"
+                >Mode of Payment</label
+              >
+              <span class="error-message" id="paymentError"></span>
+            </div>
+
+            <div class="form-group">
+              <textarea id="banksList" class="form-input" required></textarea>
+              <label for="banksList" class="form-label"
+                >List of Banks Owned and Credit Cards</label
+              >
+              <span class="error-message" id="banksError"></span>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="number"
+                id="amountScammed"
+                class="form-input"
+                required
+                min="0"
+                step="0.01"
+              />
+              <label for="amountScammed" class="form-label"
+                >Amount Scammed</label
+              >
+              <span class="error-message" id="amountError"></span>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">
+              <span class="btn-text">Submit to Generate Case ID</span>
+              <span class="btn-loader"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="successMessage" class="success-message">
+        <div class="success-content">
+          <div class="success-icon">✓</div>
+          <h2>Case ID Generated!</h2>
+          <p>Your case ID: <span id="caseId"></span></p>
+          <button id="backToForm" class="back-btn">Back to Form</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
